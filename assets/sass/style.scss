@@ -1,0 +1,226 @@
+@font-face {
+    font-family: 'CaptchaFont';
+    src: url('../fonts/CaptchaFont-VF.ttf') format('truetype');
+    font-style: normal;
+}
+
+body {
+    font-family: 'CaptchaFont', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: auto; /* Habilitar scroll vertical */
+}
+
+/* Header general */
+header {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center; /* Centrar el nombre de la tipografía horizontalmente */
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Nombre de la tipografía */
+#font-name {
+    font-family: 'CaptchaFont';
+    font-size: 2rem;
+    color: rgb(189, 38, 189);
+    font-variation-settings: 'wdth' 150, 'ital' 0; /* Valores iniciales */
+    transition: font-variation-settings 1s ease; /* Transición suave */
+}
+#font-name:hover {
+    cursor: auto;
+}
+
+/* Enlace "About" en la página principal */
+#about-link, #back-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #333; /* Color del enlace */
+    text-decoration: none; /* Eliminar subrayado */
+    position: absolute;
+    transition: font-size 0.3s ease; /* Transición suave */
+}
+
+#about-link {
+    right: 20px;
+}
+
+#back-link {
+    left: 20px; /* Alinear al lado izquierdo */
+}
+
+/* Hover de los enlaces */
+#about-link:hover, #back-link:hover {
+    font-size: 1.2rem; /* Incrementar tamaño */
+    color: #555; /* Cambiar ligeramente el color */
+    cursor: pointer;
+}
+
+main {
+    width: 80%;
+    max-width: 100vw;
+    padding: 50px 20px;
+    box-sizing: border-box;
+}
+
+#question {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#typing-area {
+    font-family: 'CaptchaFont', sans-serif;
+    font-variation-settings: 'wdth' 100, 'ital' 0;
+    font-size: 6rem;
+    line-height: 6rem;
+    width: 100%;
+    height: auto;
+    outline: none;
+    border: none;
+    margin: 0;
+    padding: 10px 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    caret-color: black;
+    background: none;
+    box-sizing: border-box;
+    overflow: visible;
+}
+.mainAbout{
+    width: 100%;
+    padding: 50px 30px;
+}
+.explicacion {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: left; /* Alinear el texto a la izquierda */
+    margin-bottom: 1rem; /* Espaciado entre párrafos */
+    max-width: 50%; /* Limitar el ancho del texto */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columnas */
+    gap: 10px; /* Espaciado entre las celdas */
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.grid-letter {
+    font-family: 'CaptchaFont', sans-serif;
+    font-size: 4rem;
+    font-variation-settings: 'wdth' 150; /* Valor inicial */
+    transition: font-variation-settings 0.5s ease; /* Suavizar la transición */
+    cursor: pointer;
+}
+
+.grid-letter:hover {
+    animation: pulseWdth 1s infinite; /* Animación constante en hover */
+}
+
+@keyframes pulseWdth {
+    0% {
+        font-variation-settings: 'wdth' 100;
+    }
+    50% {
+        font-variation-settings: 'wdth' 200;
+    }
+    100% {
+        font-variation-settings: 'wdth' 100;
+    }
+}
+
+.explicacionPulsacion {
+    font-family: 'Inter', sans-serif;
+    font-weight: normal;
+    text-align: center; /* Centrar el texto */
+    margin-top: 20px; /* Espaciado superior */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+/* Contenedor para las letras de velocidad de pulsación */
+.speed-demo {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    gap: 0px; /* Espaciado entre letras */
+    margin-top: 20px; /* Espaciado superior */
+}
+
+/* Estilo de las letras con kerning variable */
+.speed-letter {
+    font-family: 'CaptchaFont', sans-serif;
+    font-size: 20rem;
+    font-variation-settings: 'wdth' 150; /* Valor inicial */
+    transition: letter-spacing 0.5s ease; /* Transición suave */
+    cursor: pointer;
+}
+
+/* Hover para variar el kerning */
+.speed-letter:hover {
+    animation: pulseKerning 1s infinite; /* Animación constante en hover */
+}
+
+/* Animación de kerning */
+@keyframes pulseKerning {
+    0% {
+        letter-spacing: -10px;
+    }
+    50% {
+        letter-spacing: 15px;
+    }
+    100% {
+        letter-spacing: -50px;
+    }
+    
+}
+
+/* Estilo para la cuadrícula del efecto de borrado */
+.delete-demo {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columnas */
+    gap: 10px; /* Espaciado entre las celdas */
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px; /* Espaciado superior */
+}
+
+/* Letras con efecto de italic */
+.delete-letter {
+    font-family: 'CaptchaFont', sans-serif;
+    font-size: 4rem;
+    font-variation-settings: 'wdth' 150, 'ital' 0; /* Valor inicial */
+    transition: font-variation-settings 0.5s ease; /* Suavizar la transición */
+    cursor: pointer;
+}
+
+/* Hover para animación de italic */
+.delete-letter:hover {
+    animation: pulseItalic 1s infinite; /* Animación constante en hover */
+}
+
+/* Animación de italic */
+@keyframes pulseItalic {
+    0% {
+        font-variation-settings: 'wdth' 150, 'ital' 0;
+    }
+    50% {
+        font-variation-settings: 'wdth' 150, 'ital' 1;
+    }
+    100% {
+        font-variation-settings: 'wdth' 150, 'ital' 0;
+    }
+}
+
+
